@@ -1,0 +1,7 @@
+streamlit 
+langchain 
+langchain_ollama
+selenium
+beautifulsoup4
+lxml 
+python-dotenv

@@ -1,0 +1,8 @@
+This folder is going webscrape the news, and through the use of AI it is going to make educated guesses on how the market is feeling, and so this is kind of like the market sentiment, seeing how the market is feeling, and after that, based on the trades if we see any positive signs, then we will trade and hopefully make the bot better and not just rely on graphs.
+
+Steps: 
+1. Make the bot be able to get the data 
+2. Give it a grading scheme so then, it can depend on the grading scheme and see wether or not it should trade the certain stock 
+3. Allow the bot to see the current, graph and make educated guess on wether or not it should incr or decr 
+4. Have value expected errors, if the bot doesn't see anything, then it doesn't change anything 
+5. deploy
