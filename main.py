@@ -1,6 +1,7 @@
 import yfinance as yf
 import pandas as pd
 
+
 def main():
     # Define the ticker symbols
     tickers = ['AAPL', 'MSFT', 'GOOGL', 'BTC-USD']  # Add or remove symbols as needed
