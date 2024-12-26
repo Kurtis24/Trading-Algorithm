@@ -29,11 +29,19 @@ def main():
     #     print(f'Data for {ticker} saved to {filename}')
 
 
-    df = pd.read_csv('information_MSFT.csv')
+    df1 = pd.read_csv('information_MSFT.csv')
+    df2 = pd.read_csv('information_AAPL.csv')
+    df3 = pd.read_csv('information_GOOGL.csv')
+    df4 = pd.read_csv('information_BTC_USD.csv')
 
     # Example: If your CSV has columns named 'Date' and 'Value', you can plot 'Value' over 'Date'
     plt.figure(figsize=(10, 5))
-    plt.plot(df['Date'], df['Volume'], marker='o', linestyle='-')
+    
+    plt.plot(df1['Date'], df1['Volume'], marker='o', linestyle='-')
+    plt.plot(df2['Date'], df2['Volume'], marker='o', linestyle='-')
+    plt.plot(df3['Date'], df3['Volume'], marker='o', linestyle='-')
+    plt.plot(df4['Date'], df4['Volume'], marker='o', linestyle='-')
+    
     plt.title('Value Over Time')
     plt.xlabel('Date')
     plt.ylabel('Value')

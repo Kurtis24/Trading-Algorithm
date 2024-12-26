@@ -3,6 +3,15 @@ This folder is going webscrape the news, and through the use of AI it is going t
 Steps: 
 1. Make the bot be able to get the data 
 2. Give it a grading scheme so then, it can depend on the grading scheme and see wether or not it should trade the certain stock 
-3. Allow the bot to see the current, graph and make educated guess on wether or not it should incr or decr 
-4. Have value expected errors, if the bot doesn't see anything, then it doesn't change anything 
+3. We can use RNN to perdict markets, and by perdicting markets, we can use the info backed to? 
+4. Allow the bot to see the current, graph and make educated guess on wether or not it should incr or decr 
+5. Have value expected errors, if the bot doesn't see anything, then it doesn't change anything 
 5. deploy
+    
+
+Problems: 
+it has a inital cost to go enter
+
+
+Question:
+do we want to read candlas, prob do
