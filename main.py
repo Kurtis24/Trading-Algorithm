@@ -1,59 +1,57 @@
 # import yfinance as yf
 import pandas as pd
 import matplotlib.pyplot as plt
-
+import numpy as np
 
 def main():
-    # Define the ticker symbols
-    # tickers = ['AAPL', 'MSFT', 'GOOGL', 'BTC-USD']  # Add or remove symbols as needed
+  import pandas as pd
+import matplotlib.pyplot as plt
+import numpy as np
 
-    # # Download historical data for the specified tickers
-    # data = yf.download(tickers, period='1mo', interval='1d', group_by='ticker')
-
-    # # Initialize an empty dictionary to store individual DataFrames
-    # ticker_data = {}
-
-    # for ticker in tickers:
-    #     try:
-    #         ticker_df = data[ticker].dropna()  # Drop any rows with NaN values
-    #         ticker_data[ticker] = ticker_df
-    #     except KeyError:
-    #         print(f'No data found for {ticker}')
-
-    # # Save each ticker's data to a separate CSV file named "information_[TICKER].csv"
-    # for ticker, df in ticker_data.items():
-    #     # Clean ticker symbol for filename (replace '-' with '_')
-    #     clean_ticker = ticker.replace('-', '_')
-    #     filename = f'information_{clean_ticker}.csv'  # e.g., information_AAPL.csv
-    #     df.to_csv(filename)
-    #     print(f'Data for {ticker} saved to {filename}')
-
-
+def main():
     df1 = pd.read_csv('information_MSFT.csv')
     df2 = pd.read_csv('information_AAPL.csv')
     df3 = pd.read_csv('information_GOOGL.csv')
-    df4 = pd.read_csv('information_BTC_USD.csv')
+    
+    # Convert "Date" columns to datetime
+    df1['Date'] = pd.to_datetime(df1['Date'])
+    df2['Date'] = pd.to_datetime(df2['Date'])
+    df3['Date'] = pd.to_datetime(df3['Date'])
 
-    # Example: If your CSV has columns named 'Date' and 'Value', you can plot 'Value' over 'Date'
-    plt.figure(figsize=(10, 5))
+    plt.figure(figsize=(10,5))
     
-    plt.plot(df1['Date'], df1['Volume'], marker='o', linestyle='-')
-    plt.plot(df2['Date'], df2['Volume'], marker='o', linestyle='-')
-    plt.plot(df3['Date'], df3['Volume'], marker='o', linestyle='-')
-    plt.plot(df4['Date'], df4['Volume'], marker='o', linestyle='-')
+    # Plot scatter of each
+    plt.scatter(df1['Date'], df1['Volume'], c="red",   linewidth=2, label="MSFT Volume")
+    plt.scatter(df2['Date'], df2['Volume'], c="green", linewidth=2, label="AAPL Volume")
+    plt.scatter(df3['Date'], df3['Volume'], c="black", linewidth=2, label="GOOGL Volume")
+
+    # Example best fit line for df1 only:
+    # 1) Convert date to an ordinal so it's numeric
+    df1['Date_ordinal'] = df1['Date'].map(pd.Timestamp.toordinal)
     
-    plt.title('Value Over Time')
+    # 2) Prepare X and y
+    x = df1['Date_ordinal'].values.reshape(-1, 1)  # shape (N,1)
+    y = df1['Volume'].values.reshape(-1, 1)        # shape (N,1)
+
+    # 3) Build matrix X (with intercept)
+    X = np.hstack([x, np.ones_like(x)])            # shape (N,2)
+
+    # 4) Solve for theta = (X^T X)^{-1} X^T y
+    theta = np.linalg.inv(X.T @ X) @ (X.T @ y)     # shape (2,1)
+
+    # 5) Predict
+    y_line = X @ theta                             # shape (N,1)
+
+    # Plot the best fit line against the original Date
+    plt.plot(df1['Date'], y_line, 'r', label='MSFT Best Fit')
+
+    plt.title('Volume Over Time')
     plt.xlabel('Date')
-    plt.ylabel('Value')
-
-    # Rotate date labels if necessary
+    plt.ylabel('Volume')
     plt.xticks(rotation=45)
+    plt.legend()
     plt.tight_layout()
-
-    # Show the plot
     plt.show()
-
-
 
 if __name__ == "__main__":
     main()
