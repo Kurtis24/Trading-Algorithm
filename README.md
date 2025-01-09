@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project is an automated trading system designed to manage funds by executing trades and generating passive income. Developed as a passion project, it helped me explore critical considerations for building a personal investment portfolio. Additionally, it provided valuable insights into algorithm design and functionality.
+This project is an automated trading system designed to manage funds by executing trades and generating passive income. Developed as a passion project, it helped me explore ways to build a personal investment portfolio. Additionally, it provided valuable insights into algorithm design and functionality.
 
 ## How It Works
 
