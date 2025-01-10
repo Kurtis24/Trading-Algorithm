@@ -1,3 +1,0 @@
-time,strategy,identifier,symbol,side,type,status,multiplier,time_in_force,asset.strike,asset.multiplier,asset.asset_type,price,filled_quantity,trade_cost
-2025-01-07 09:30:00-05:00,BuyHold,4d76e7ce8bc84a498b5425cf03750704,NVDA,buy,market,new,1,gtc,0.0,1,stock,,,
-2025-01-07 09:30:00-05:00,BuyHold,4d76e7ce8bc84a498b5425cf03750704,NVDA,buy,market,fill,1,gtc,0.0,1,stock,153.02999877929688,653.0,0.0

@@ -24,7 +24,7 @@ class BuyHold(Strategy):
       
       quantity = self.cash // price
       
-      data = yf.download(symbol, start="2023-01-02", end="2023-12-03")
+      data = yf.download(symbol, start="2025-01-03", end="2025-01-08")
 
       data.reset_index(inplace=True)
 
@@ -39,14 +39,15 @@ class BuyHold(Strategy):
       y_pred = slope * dat + intercept
       
       if slope > 0:
-          print("The trend is positive.")
+        order = self.create_order(symbol, quantity, "buy")
+        self.submit_order(order)
       else:
-          print("The trend is negative or flat")
+        print("Not good to buy")
 
 if __name__ == "__main__":
   
   if IS_BACKTESTING:
-    start = datetime(2025, 1, 7)
+    start = datetime(2025, 1, 3)
     end = datetime(2025, 1, 8)
     BuyHold.backtest(
         YahooDataBacktesting,
