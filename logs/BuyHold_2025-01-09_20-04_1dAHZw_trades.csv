@@ -1,0 +1,2 @@
+time,strategy,identifier,symbol,side,type,status,multiplier,time_in_force,asset.strike,asset.multiplier,asset.asset_type
+2025-01-07 09:30:00-05:00,BuyHold,3288ae6fc7a741c1a961606eb083b987,NVDA,buy,market,new,1,gtc,0.0,1,stock
