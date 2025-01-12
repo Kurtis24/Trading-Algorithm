@@ -24,7 +24,7 @@ class BuyHold(Strategy):
       
       quantity = self.cash // price
       
-      data = yf.download(symbol, start="2025-01-03", end="2025-01-08")
+      data = yf.download(symbol, start="2024-5-01", end="2024-5-31")
 
       data.reset_index(inplace=True)
 
@@ -47,8 +47,8 @@ class BuyHold(Strategy):
 if __name__ == "__main__":
   
   if IS_BACKTESTING:
-    start = datetime(2025, 1, 3)
-    end = datetime(2025, 1, 8)
+    start = datetime(2024, 5, 1)
+    end = datetime(2024, 5, 31)
     BuyHold.backtest(
         YahooDataBacktesting,
         start,
