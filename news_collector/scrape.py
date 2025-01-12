@@ -1,6 +1,9 @@
+import nltk
+from textblob import TextBlob
 import selenium.webdriver as webdriver
 from selenium.webdriver.chrome.service import Service
 from bs4 import BeautifulSoup
+from nltk.sentiment import SentimentIntensityAnalyzer
 
 def scrape_website(website):
     print("Launching chrome browser...")
@@ -17,7 +20,7 @@ def scrape_website(website):
     
     finally: 
         driver.quit()
-        
+
 def extract_body_content(html_content):
     soup = BeautifulSoup(html_content, "html.parser")
     body_content = soup.body
@@ -31,33 +34,61 @@ def clean_body_content(body_content):
     for script_or_style in soup(["script", "style"]):
         script_or_style.extract()
         
-        
     cleaned_content = soup.get_text(separator="\n")
     cleaned_content = "\n".join(
         line.strip() for line in cleaned_content.splitlines() if line.strip()
-        )
-        
+    )
     return cleaned_content
 
-def split_dom_content(dom_content, max_length=6000):
-    return[
-        dom_content[i: i + max_length] for i in range(0, len(dom_content), max_length)
-    ]
+def search_keywords(cleaned_content, keywords):
+    found_keywords = []
+    lines = cleaned_content.split("\n")
     
- 
+    for line in lines:
+        for keyword in keywords:
+            if keyword.lower() in line.lower():
+                found_keywords.append((keyword, line))
+    
+    return found_keywords
+
+def analyze_sentiment(cleaned_content):
+    sia = SentimentIntensityAnalyzer()
+    sentiment_scores = sia.polarity_scores(cleaned_content)
+
+    # Determine the overall sentiment
+    if sentiment_scores['compound'] > 0.5:
+        sentiment = "Positive"
+    elif sentiment_scores['compound'] < -0.5:
+        sentiment = "Negative"
+    else:
+        sentiment = "Neutral"
+
+    return sentiment, sentiment_scores
 
 def main():
-    saving_scrape_info = open("News_data", "w")
-    url = input("Enter url:")
+    keywords = ["NVDA", "Nvidia"]
+    
+    url = input("Enter the URL to scrape: ")
+    
     result = scrape_website(url)
     
-
     body_content = extract_body_content(result)
     cleaned_content = clean_body_content(body_content)
     
-    saving_scrape_info.writelines(cleaned_content)
+    sentiment, scores = analyze_sentiment(cleaned_content)
+
     
-    saving_scrape_info.close()
+    matched_keywords = search_keywords(cleaned_content, keywords)
+    
+    with open("News_data.txt", "w") as saving_scrape_info:
+        saving_scrape_info.write("=== Keywords Found ===\n")
+        for keyword, line in matched_keywords:
+            saving_scrape_info.write(f"[{keyword}] {line}\n")
+
+    with open("News_data.txt", "a+") as file:
+        file.write("=== Sentiment Analysis ===\n")
+        file.write(f"Overall Sentiment: {sentiment}\n")
+        file.write(f"Sentiment Scores: {scores}\n")
     
 if __name__ == "__main__":
     main()

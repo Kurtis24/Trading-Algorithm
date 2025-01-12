@@ -1,0 +1,37 @@
+=== Keywords Found ===
+[Nvidia] Nvidia’s 'AI Godfather' forces a reset on the tech world’s next big bet
+[Nvidia] Quantum computing stocks fell 40% after Nvidia's CEO shared his outlook for the industry. See the details.
+[Nvidia] Why Nvidia's rug pull doesn't faze US stock market bulls
+[Nvidia] An autonomous truck company revealed a deal with Nvidia. Its stock, already up 150% in a year, just soared even higher.
+[Nvidia] Nasdaq leads stock declines as traders pare rate cut bets; Nvidia plummets after record close
+[Nvidia] CEO Jensen Huang told Yahoo Finance that Nvidia is racing to get its next-gen Blackwell chips 'into every data center in the world.'
+[Nvidia] Stocks edge higher with jobs data on deck; Nvidia jumps after CEO's CES keynote
+[Nvidia] Wall Street gets ready to hear from Nvidia's CEO: Here's what to expect from Jensen Huang's keynote address at CES
+[Nvidia] Tech leads stocks higher as Nvidia surges to record high
+[Nvidia] Nasdaq, S&P 500, Dow jump as Nvidia leads chip stocks higher
+[Nvidia] Sozzi: The blunt truth on Nvidia, the 'Magnificent 7,' and markets
+[NVDA] NVDA
+[NVDA] NVDA
+[Nvidia] Nvidia Became One of the Largest Companies by Market Cap in 2024. Will Its Reign Continue in 2025?
+[NVDA] NVDA
+[NVDA] NVDA
+[Nvidia] NVIDIA Corporation
+[NVDA] NVDA
+[Nvidia] The blunt truth on Nvidia, the 'Magnificent 7,' and markets
+[Nvidia] Nvidia Became One of the Largest Companies by Market Cap in 2024. Will Its Reign Continue in 2025?
+[NVDA] NVDA
+[NVDA] The artificial intelligence (AI) trend has given big boosts to the share prices of Nvidia (NASDAQ: NVDA) and Taiwan Semiconductor Manufacturing (NYSE: TSM) over the past year.  The massive demand for powerful chips capable of handling AI workloads in data centers has played a central role in driving those share price gains, with major cloud service companies and governments deploying large quantities of the AI-specific semiconductors designed by Nvidia and manufactured by Taiwan Semi.  Market research firm Gartner estimates that global public cloud spending grew by 19.2% in 2024, and forecasts that it will grow at a faster pace of 21.5% in 2025.
+[Nvidia] The artificial intelligence (AI) trend has given big boosts to the share prices of Nvidia (NASDAQ: NVDA) and Taiwan Semiconductor Manufacturing (NYSE: TSM) over the past year.  The massive demand for powerful chips capable of handling AI workloads in data centers has played a central role in driving those share price gains, with major cloud service companies and governments deploying large quantities of the AI-specific semiconductors designed by Nvidia and manufactured by Taiwan Semi.  Market research firm Gartner estimates that global public cloud spending grew by 19.2% in 2024, and forecasts that it will grow at a faster pace of 21.5% in 2025.
+[NVDA] NVDA
+[NVDA] NVDA
+[NVDA] One of the biggest themes in the stock market in 2024 was artificial intelligence (AI), which is showing signs of becoming a breakthrough technology.  Nvidia (NASDAQ: NVDA) has arguably been the biggest winner from AI, as its revenue absolutely skyrocketed the past two years.  Meanwhile, it amassed a whopping 90% market share in the GPU space over rival Advanced Micro Devices due to its superior software platform CUDA, which includes developer tools and micro-libraries that easily allow its chips to be programmed to handle various AI-related tasks.
+[Nvidia] One of the biggest themes in the stock market in 2024 was artificial intelligence (AI), which is showing signs of becoming a breakthrough technology.  Nvidia (NASDAQ: NVDA) has arguably been the biggest winner from AI, as its revenue absolutely skyrocketed the past two years.  Meanwhile, it amassed a whopping 90% market share in the GPU space over rival Advanced Micro Devices due to its superior software platform CUDA, which includes developer tools and micro-libraries that easily allow its chips to be programmed to handle various AI-related tasks.
+[NVDA] NVDA
+[Nvidia] Prediction: 2 AI Stocks Will Be Worth More Than Nvidia by Year-End in 2025
+[Nvidia] Nvidia shares have surged over 180% since January 2024, and the stock accounted for nearly one-quarter of the gains in the S&P 500 (SNPINDEX: ^GSPC) during that period.  The company is now worth $3.4 trillion and should continue to benefit from the artificial intelligence (AI) boom for many years to come.  Amazon is currently worth $2.3 trillion.
+[Nvidia] Nvidia
+[NVDA] NVDA
+[Nvidia] NVIDIA Corporation
+=== Sentiment Analysis ===
+Overall Sentiment: Positive
+Sentiment Scores: {'neg': 0.049, 'neu': 0.799, 'pos': 0.152, 'compound': 1.0}
