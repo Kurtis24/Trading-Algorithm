@@ -22,7 +22,9 @@ class BuyHold(Strategy):
       symbol = "NVDA"
       price = self.get_last_price(symbol)
       
-      quantity = self.cash // price
+      #if market is good or bad
+      fake_quant = (self.cash // price) / 2
+      
       
       data = yf.download(symbol, start="2024-5-01", end="2024-5-31")
 
@@ -39,6 +41,7 @@ class BuyHold(Strategy):
       y_pred = slope * dat + intercept
       
       if slope > 0:
+        quantity = fake_quant * slope
         order = self.create_order(symbol, quantity, "buy")
         self.submit_order(order)
       else:
