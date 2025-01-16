@@ -23,7 +23,7 @@ class BuyHold(Strategy):
       price = self.get_last_price(symbol)
       
       #if market is good or bad
-      fake_quant = (self.cash // price) / 2
+      fake_quant = (self.cash // price) * .10
       
       
       data = yf.download(symbol, start="2024-5-01", end="2024-5-31")
